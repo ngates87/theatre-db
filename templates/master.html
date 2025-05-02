@@ -1,0 +1,182 @@
+﻿<!DOCTYPE html>
+<html class="no-js">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{$title|default:'MASC'}</title>
+
+
+    <script src="/Scripts/knockout-3.4.0.js"></script>
+    <!--[if lt IE 9]>
+        <script src="/public/javascript/css3-mediaqueries.js"></script>
+        <![endif]-->
+    <script src="/Scripts/jquery-2.2.0.min.js"></script>
+    <!--<script src="/Scripts/jquery-1.9.1.min.js"></script>
+    <script src="/Scripts/jquery-migrate-1.2.1.min.js"></script>
+    <script src="/public/javascript/jquery/ui/jquery-ui-1.9.2.min.js"></script>-->
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous" />
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous" />
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+
+    <!-- <link rel="stylesheet" media="screen" href="/Content/themes/pepper-grinder/jquery-ui.pepper-grinder.min.css" />-->
+    <link href="/Content/font-awesome.css" rel="stylesheet" />
+    <link rel="stylesheet" media="screen" href="/public/packages/jquery-ui-themes/pepper-grinder/jquery-ui-1.9.2.css" />
+    <script src="../../Scripts/jquery-ui-1.11.4.min.js"></script>
+    <link rel="stylesheet" href="/Content/master.css" />
+    {block name=css}{/block}
+
+    {block name=scripts}{/block}
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="apple-touch-icon" href="../public/images/apple/MASC.png" />
+    <link rel="apple-touch-icon" sizes="76x76" href="../public/images/apple/MASC76x76.png" />
+    <link rel="apple-touch-icon" sizes="120x120" href="../public/images/apple/MASC120x120.png" />
+    <link rel="apple-touch-icon" sizes="152x152" href="../public/images/apple/MASC152x152.png" />
+</head>
+
+<body lang="en">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/">Marshall Area Stage Company</a>
+            </div>
+            <div id="navbar" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown">
+                        <a href="/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Home <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/Rentals.php">Equipment Rental</a>
+                            </li>
+                            <li>
+                                <a href="/Discover.php">Get Involved</a>
+                            </li>
+                            <li>
+                                <a href="/public/files/CurrentArtsCalendar.pdf" target='_blank'>Arts Calendar</a>
+                            </li>
+                            <li>
+                                <a href="/Links.php">Links</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            Shows <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            {GetCurrentSeason}
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            About <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="/About.php">About Us</a>
+                            </li>
+                            <li>
+                                <a href="/Troupers.php">Our Troupers</a>
+                            </li>
+                            <li>
+                                <a href="/Shows.php">Our Shows</a>
+                            </li>
+                            <li>
+                                <a href="/Venues.php">Our Venues</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="/PhotoAlbums.php">
+                            Photos
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="https://www.facebook.com/MASC99" title="Become a fan" target="_blank">
+                            <img src="/public/images/img/social/facebook_32.png" alt="Facebook" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/MASC_mn" title="Follow our tweets" target="_blank">
+                            <img src="/public/images/img/social/twitter_32.png" alt="Twitter" />
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.razoo.com/story/Marshall-Area-Stage-Company" title="Donate to Masc" target="_blank">
+                            <img src="/public/images/donate.png" alt="donate" style="max-width: 32px; max-height: 32px" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container-fluid">
+        <div class="page-host">
+            {block name=body}{/block}
+            <footer class="row">
+                <div class="col-lg-4">
+
+                    <div class="widget-block">
+                        <h3>{$smarty.now|date_format:"%Y"} Season</h3>
+                        <ul style="display: inline-block; margin-top: 0px; padding-top: 0px;">
+                            {GetCurrentSeason}
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="widget-block">
+                        <h3>Our Theatre Friends</h3>
+                        <ul style="display: inline-block; margin-top: 0px; padding-top: 0px;">
+                            <li>
+                                <a href="http://www.smsu.edu/academics/programs/theatrearts/" target="_blank">SMSU Theatre</a>
+                            </li>
+                            <li>
+                                <a href="http://www.lakebentonoperahouse.org/" target="_blank">Lake Benton Opera House</a>
+                            </li>
+                            <li>
+                                <a href="http://www.thebarntheatre.com" target="_blank">The Barn Theater</a>
+                            </li>
+                            <li>
+                                <a href="http://www.pipestoneminnesota.com/artscenter/index.htm" target="_blank">Calumet Players</a>
+                            </li>
+                            <li>
+                                <a href="http://www.redwoodareatheatre.org" target="_blank">Redwood Area Theatre (RAT)</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="widget-block">
+                        <div id="tweets" class="footer-col tweet">
+                            <h4>MASC on twitter</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <iframe src="//www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2FMASC99&amp;colorscheme=light&amp;layout=standard&amp;action=like&amp;show_faces=true&amp;send=true"
+                                scrolling="no" frameborder="0" style="margin-left:24px; border: none; overflow: hidden; width: 60%; " allowtransparency="true"></iframe>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

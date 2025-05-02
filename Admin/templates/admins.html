@@ -1,0 +1,80 @@
+{extends file="templates/securemaster.tpl"}
+{block name=body prepend}
+<div class="row">
+    <div class="col-sm-10"><h1>Admins</h1></div>
+    <div class="col-sm-2">
+        <button type="submit" class="btn btn-primary">Create User</button>
+    </div>
+</div>
+{/block}
+{block name=content}
+<form id="FrmAdminAdd" method="post">
+    <div class="form-group">
+        <label for="firstname">First Name: </label><br />
+        <input id="firstname" name="firstname" type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+        <span class='required' title='Required field.'>*</span><label for="lastname"><strong>Last Name: </strong></label><br />
+        <input id="lastname" name="lastname" type="email" class="form-control" />
+    </div>
+    <div class="form-groupn">
+        <span class='required' title='Required field.'>*</span><label for="email"><strong>Email: </strong></label><br />
+        <input id="email" name="email" type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+        <span class='required' title='Required field.'>*</span><label for="username"><strong>Username</strong></label><br />
+        <input id="username" name="username" type="text" class="form-control" />
+    </div>
+    <div class="form-group">
+        <span class='required' title='Required field.'>*</span><label for="password"><strong>Password: </strong></label><br />
+        <input id="password" name="password" type="password" class="form-control" />
+    </div>
+    <div class="form-group">
+        <span class='required' title='Required field.'>*</span><label for="confirm_password"><strong>Confirm Password: </strong></label><br />
+        <input id="confirm_password" name="confirm_password" type="password" class="form-control" />
+    </div>
+    <div class="form-group ">
+        <span class='required' title='Required field.'>*</span><label for="inGrouplevel">Group Level Access</label>
+        <table>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Group</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                {foreach from=$groupLevels item=groupLevel}
+                <tr class="radio">
+                    <td><input type='radio' name='inGroupLevel' value='{$groupLevel["groupLevel"]}' /></td>
+                    <td>{$groupLevel["title"]}</td>
+                    <td>{$groupLevel["description"]}</td>
+                </tr>
+                {/foreach}
+            </tbody>
+        </table><br />
+        <div class="table">
+            <table class="table-responsive">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>Group Level Access</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {foreach from=$admins item=admin}
+                    <tr>
+                        <td>{$admin["id"]}</td>
+                        <td>{$admin["userName"]}</td>
+                        <td>{$admin["email"]}</td>
+                        <td>{$admin["groupLevel"]}</td>
+                    </tr>
+                    {/foreach}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</form>
+{/block}

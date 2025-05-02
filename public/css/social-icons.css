@@ -1,0 +1,146 @@
+/* Social icons ------------------------------*/
+
+.aim{ background: url(../../templates/img/social/aim_32.png); }
+.apple{ background: url(../../templates/img/social/apple_32.png); }
+.bebo{ background: url(../../templates/img/social/bebo_32.png); }
+.blogger{ background: url(../../templates/img/social/blogger_32.png); }
+.brightkite{ background: url(../../templates/img/social/brightkite_32.png); }
+.cargo{ background: url(../../templates/img/social/cargo_32.png); }
+.delicious{ background: url(../../templates/img/social/delicious_32.png); }
+.designfloat{ background: url(../../templates/img/social/designfloat_32.png); }
+.designmoo{ background: url(../../templates/img/social/designmoo_32.png); }
+.deviantart{ background: url(../../templates/img/social/deviantart_32.png); }
+.digg{ background: url(../../templates/img/social/digg_32.png); }
+.dopplr{ background: url(../../templates/img/social/dopplr_32.png); }
+.dribbble{ background: url(../../templates/img/social/dribbble_32.png); }
+.email{ background: url(../../templates/img/social/email_32.png); }
+.ember{ background: url(../../templates/img/social/ember_32.png); }
+.evernote{ background: url(../../templates/img/social/evernote_32.png); }
+#social-bar .facebook{ background: url(../../templates/img/social/facebook_32.png); }
+.flickr{ background: url(../../templates/img/social/flickr_32.png); }
+.forrst{ background: url(../../templates/img/social/forrst_32.png); }
+.friendfeed{ background: url(../../templates/img/social/friendfeed_32.png); }
+.gamespot{ background: url(../../templates/img/social/gamespot_32.png); }
+.google{ background: url(../../templates/img/social/google_32.png); }
+.google_plus{ background: url(../../templates/img/social/google_plus_32.png); }
+.google_voice{ background: url(../../templates/img/social/google_voice_32.png); }
+.google_wave{ background: url(../../templates/img/social/google_wave_32.png); }
+.googletalk{ background: url(../../templates/img/social/googletalk_32.png); }
+.gowalla{ background: url(../../templates/img/social/gowalla_32.png); }
+.grooveshark{ background: url(../../templates/img/social/grooveshark_32.png); }
+.ilike{ background: url(../../templates/img/social/ilike_32.png); }
+.komodomedia_azure{ background: url(../../templates/img/social/komodomedia_azure_32.png); }
+.komodomedia_wood{ background: url(../../templates/img/social/komodomedia_wood_32.png); }
+.lastfm{ background: url(../../templates/img/social/lastfm_32.png); }
+.linkedin{ background: url(../../templates/img/social/linkedin_32.png); }
+.mixx{ background: url(../../templates/img/social/mixx_32.png); }
+.mobileme{ background: url(../../templates/img/social/mobileme_32.png); }
+.mynameise{ background: url(../../templates/img/social/mynameise_32.png); }
+.myspace{ background: url(../../templates/img/social/myspace_32.png); }
+.netvibes{ background: url(../../templates/img/social/netvibes_32.png); }
+.newsvine{ background: url(../../templates/img/social/newsvine_32.png); }
+.openid{ background: url(../../templates/img/social/openid_32.png); }
+.orkut{ background: url(../../templates/img/social/orkut_32.png); }
+.pandora{ background: url(../../templates/img/social/pandora_32.png); }
+.paypal{ background: url(../../templates/img/social/paypal_32.png); }
+.picasa{ background: url(../../templates/img/social/picasa_32.png); }
+.playstation{ background: url(../../templates/img/social/playstation_32.png); }
+.plurk{ background: url(../../templates/img/social/plurk_32.png); }
+.posterous{ background: url(../../templates/img/social/posterous_32.png); }
+.qik{ background: url(../../templates/img/social/qik_32.png); }
+.readernaut{ background: url(../../templates/img/social/readernaut_32.png); }
+.reddit{ background: url(../../templates/img/social/reddit_32.png); }
+.roboto{ background: url(../../templates/img/social/roboto_32.png); }
+.rss{ background: url(../img/social/rss_32.png); }
+.sharethis{ background: url(../../templates/img/social/sharethis_32.png); }
+.skype{ background: url(../../templates/img/social/skype_32.png); }
+.stumbleupon{ background: url(../../templates/img/social/stumbleupon_32.png); }
+.technorati{ background: url(../../templates/img/social/technorati_32.png); }
+.tumblr{ background: url(../../templates/img/social/tumblr_32.png); }
+#social-bar .twitter{ background: url(../../templates/img/social/twitter_32.png); }
+.viddler{ background: url(../../templates/img/social/viddler_32.png); }
+.vimeo{ background: url(../../templates/img/social/vimeo_32.png); }
+.virb{ background: url(../../templates/img/social/virb_32.png); }
+.windows{ background: url(../../templates/img/social/windows_32.png); }
+.wordpress{ background: url(../../templates/img/social/wordpress_32.png); }
+.xing{ background: url(../../templates/img/social/xing_32.png); }
+.yahoo{ background: url(../../templates/img/social/yahoo_32.png); }
+.yahoobuzz{ background: url(../../templates/img/social/yahoobuzz_32.png); }
+.yelp{ background: url(../../templates/img/social/yelp_32.png); }
+.youtube{ background: url(../../templates/img/social/youtube_32.png); }
+.zootool{ background: url(../../templates/img/social/zootool_32.png); }
+
+
+/*
+
+The list of icon files in 16px
+
+ aim_32.png
+ apple_32.png
+ bebo_32.png
+ blogger_32.png
+ brightkite_32.png
+ cargo_32.png
+ delicious_32.png
+ designfloat_32.png
+ designmoo_32.png
+ deviantart_32.png
+ digg_32.png
+ dopplr_32.png
+ dribbble_32.png
+ email_32.png
+ ember_32.png
+ evernote_32.png
+ facebook_32.png
+ flickr_32.png
+ forrst_32.png
+ friendfeed_32.png
+ gamespot_32.png
+ google_32.png
+ google_voice_32.png
+ google_wave_32.png
+ googletalk_32.png
+ gowalla_32.png
+ grooveshark_32.png
+ ilike_32.png
+ komodomedia_azure_32.png
+ komodomedia_wood_32.png
+ lastfm_32.png
+ linkedin_32.png
+ mixx_32.png
+ mobileme_32.png
+ mynameise_32.png
+ myspace_32.png
+ netvibes_32.png
+ newsvine_32.png
+ openid_32.png
+ orkut_32.png
+ pandora_32.png
+ paypal_32.png
+ picasa_32.png
+ playstation_32.png
+ plurk_32.png
+ posterous_32.png
+ qik_32.png
+ readernaut_32.png
+ reddit_32.png
+ roboto_32.png
+ rss_32.png
+ sharethis_32.png
+ skype_32.png
+ stumbleupon_32.png
+ technorati_32.png
+ tumblr_32.png
+ twitter_32.png
+ viddler_32.png
+ vimeo_32.png
+ virb_32.png
+ windows_32.png
+ wordpress_32.png
+ xing_32.png
+ yahoo_32.png
+ yahoobuzz_32.png
+ yelp_32.png
+ youtube_32.png
+ zootool_32.png
+*/

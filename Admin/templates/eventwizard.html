@@ -1,0 +1,280 @@
+﻿<div id="newEventModal" class="modal fade" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" data-bind="text:dialogEvent().eventTitle()"></h4>
+            </div>
+            <div class="modal-body">
+                <div id="wizard" class="swMain">
+                    <ul>
+                        <li>
+                            <a href="#step-1">
+                                <label class="stepNumber">1</label>
+                                <span class="stepDesc">
+                                    Event Info
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#step-2">
+                                <label class="stepNumber">2</label>
+                                <span class="stepDesc">
+                                    Prices
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#step-3">
+                                <label class="stepNumber">3</label>
+                                <span class="stepDesc">
+                                    Show Notes
+                                </span>
+                            </a>
+                        </li>
+                        <!--<li>
+                            <a href="#step-4">
+                                <label class="stepNumber">4</label>
+                                <span class="stepDesc">
+                                    Event Admins
+                                </span>
+                            </a>
+                        </li>-->
+                        <li>
+                            <a href="#step-5">
+                                <label class="stepNumber">5</label>
+                                <span class="stepDesc">
+                                    Venue
+                                </span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#step-6">
+                                <label class="stepNumber">6</label>
+                                <span class="stepDesc">
+                                    Cast & Crew<!--<br />-->
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <form id="frmEvent" action="Ajax/Events.php" method="post">
+                        <div id="step-1">
+                            <input type="hidden" id="inEventID" />
+                            <div class="form-group">
+                                <span class='required' title='Required field.'>*</span>
+                                <label for="inEventTitle"> Event Title  </label>
+                                <br />
+                                <input id="inEventTitle" name="inEventTitle" type="text" required="required" class="form-control"
+                                       data-bind="value:dialogEvent().eventTitle,valueUpdate:'afterkeydown'" />
+                            </div>
+
+                            <div class="form-group">
+                                <span class='required' title='Required field.'>*</span>
+                                <label for="inEventSlug">
+                                    Event Slug
+                                </label>
+                                <br />
+                                <input id="inEventSlug" name="inEventSlug" type="text" required="required" class="form-control" data-bind="value:dialogEvent().eventSlug" />
+                            </div>
+                            <div class="checkbox">
+                                <label for="inActive"><input id="inActive" name="inActive" type="checkbox" data-bind="checked: dialogEvent().active" />Active</label>
+                            </div>
+                            <div class="form-group">
+                                <span class='required' title='Required field.'>*</span>
+                                <label for="inCompany">
+                                    Company (presenters)
+                                </label>
+                                <select class="form-control" id="inCompany" name="inCompany" required="required">
+                                    {foreach from=$companies item=company}
+                                    <option value='{$company["id"]}'>{$company["name"]}</option>
+                                    {/foreach}
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="inArtfullyID">Artfully Event ID</label>
+                                <input id="inArtfullyID" name="inArtfullyID" type="text" class="form-control" data-bind="value:dialogEvent().artfullyId" />
+                            </div>
+                        </div>
+                        <div id="step-2">
+                            <div class="form-group">
+                                <label for="inPreShowPrice">Pre-Event Price</label>
+                                <br />
+                                <input id="inPreShowPrice" name="inPreShowPrice" type="text" class="form-control" data-bind="value:dialogEvent().preEventPrice" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="inDoorPrice">Door Price</label>
+                                <br />
+                                <input id="inDoorPrice" name="inDoorPrice" type="text" class="form-control" data-bind="value:dialogEvent().doorPrice" />
+                            </div>
+                        </div>
+                        <div id="step-3">
+                            <div class="form-group">
+                                <label for="inShowNotes">Event Notes</label>
+                                <br />
+                                <textarea name="inShowNotes" id="inShowNotes" class="form-control"></textarea>
+                            </div>
+                        </div>
+                        <!--<div id="step-4">
+                            <strong> Event Admin</strong>
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Full Name</th>
+                                            <th style="width:16px;"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="eventAdmin">
+                                        <tr>
+                                            <td>
+                                                <select name="inEventAdmin" id="inEventAdmin" class="form-control">
+                                                    <option value=""></option>
+                                                    {foreach from=$admins item=admin}
+                                                    <option value='{$admin["id"]}'>{$admin["name"]}</option>
+                                                    {/foreach}
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <a href='#' title='Add Row' id="btnAddAdmin">
+                                                    <span class='ui-icon ui-icon-plusthick'></span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>-->
+                        <div id="step-5">
+                            <strong>Setup Event</strong>
+                            <div class="table-responsive">
+                                <table id="tblEventInfo" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th style="width:50%;">Venue</th>
+                                            <th style="width:25%;">Date/Time</th>
+                                            <th style="width:25%;">Type</th>
+                                            <th colspan="2" class="action"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="eventInfo">
+                                        <tr>
+                                            <!--   place holder -->
+                                            <td>
+                                                <select id="selectVenues" class="form-control" data-bind="value:dialogEvent().newPerformance().venueId">
+                                                    {foreach from=$venues item=venue}
+                                                    {if $venue["selected"] == true}
+                                                    <option value='{$venue["id"]}' selected='true'>{$venue["title"]}</option>
+                                                    {else}
+                                                    <option value='{$venue["id"]}'>{$venue["title"]}</option>
+                                                    {/if}
+                                                    {/foreach}
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input id="inEventDateTime" class="dateTime form-control" type="text" data-bind="value:dialogEvent().newPerformance().when" />
+                                            </td>
+                                            <td>
+                                                <select id="inEventCategory" name="inEventCategory" class="form-control" data-bind="value:dialogEvent().newPerformance().typeId">
+                                                    <option value=""></option>
+                                                    {foreach from=$itemTypes item=type}
+                                                    <option value='{$type["id"]}'>{$type["name"]}</option>
+                                                    {/foreach}
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <a href='#' title='Add Row' id="btnAddEventInfo" data-bind="click:dialogEvent().addPerformance">
+                                                    <span class='fa fa-plus fa-lg'></span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <!--ko foreach:dialogEvent().performanceInfo -->
+                                        <tr>
+                                            <td>
+                                                <span data-bind="html:$data.venueName" />
+                                                <input type='hidden' name='Venues[]' data-bind="text:$data.venueName" />
+                                            </td>
+                                            <td>
+                                                <span data-bind="text:$data.when" />
+                                                <input type='hidden' name='EventDates[]' data-bind="text:$data.when" />
+                                            </td>
+                                            <td>
+                                                <span data-bind="text:$data.type" />
+                                                <input type='hidden' name='EventTypes[]' data-bind="text:$data.type" />
+                                            </td>
+                                        </tr>
+                                        <!-- /ko-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div id="step-6">
+                            <strong>Choose Troupers (cast & crew)</strong>
+                            <div class="table-responsive">
+                                <table id="tblTroupersInfo" class="table table-striped">
+                                    <thead>
+                                        <tr>
+                                            <!--<th class="action"></th>-->
+                                            <th style="width:35%;">Person</th>
+                                            <th style="width:40%;">Role</th>
+                                            <th>Category</th>
+                                            <th class="action"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="trouperInfo">
+                                        <tr>
+                                            <!--<td></td>-->
+                                            <td>
+                                                <select id="selectTrouper" class="form-control" data-bind="value:dialogEvent().newTrouperRow().trouperId">
+                                                    {foreach from=$troupers item=trouper}
+                                                    <option value='{$trouper["id"]}'>{$trouper["name"]}</option>
+                                                    {/foreach}
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <input id="inRole" type="text" class="form-control" data-bind="value:dialogEvent().newTrouperRow().trouperRole" />
+                                            </td>
+                                            <td>
+                                                <select id="selectTrouperCategory" class="form-control" data-bind="value:dialogEvent().newTrouperRow().catID">
+                                                    {foreach from=$trouperCategories item=cat}
+                                                    <option value='{$cat["id"]}'>{$cat["display"]}</option>
+                                                    {/foreach}
+                                                </select>
+                                            </td>
+                                            <td>
+                                                <a href='#' title='Add Row' id="btnAddTrouperInfo" data-bind="click:dialogEvent().addTrouper">
+                                                    <span class='fa fa-plus fa-lg'></span>
+                                                </a>
+                                            </td>
+                                        </tr>
+                                        <!--ko foreach:dialogEvent().trouperInfo -->
+                                        <tr>
+                                            <!--<td />-->
+                                            <td>
+                                                <span data-bind="html:$data.fullName"></span>
+                                                <input type="hidden" name='Troupers[]' data-bind="value:$data.fullName">
+                                            </td>
+                                            <td>
+                                                <span data-bind="text:$data.role"></span>
+                                                <input name='Roles[]' type="hidden" data-bind="value:$data.role" />
+                                            </td>
+                                            <td>
+                                                <span data-bind="text:$data.catDisplay"></span>
+                                                <input type="hidden" name='Category[]' data-bind="value:$data.catDisplay" />
+                                            </td>
+                                        </tr>
+                                        <!--/ko-->
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" data-bind="click: saveChanges">Save changes</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->

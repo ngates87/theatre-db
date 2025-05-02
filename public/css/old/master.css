@@ -1,0 +1,339 @@
+img.bg {
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+.alpha60 {
+/*     Fallback for web browsers that doesn't support RGBa */
+    background: rgb(255, 255, 255);
+/*     RGBa with 0.6 opacity */
+    background: rgba(255, 255, 255, 0.3);
+/*     For IE 5.5 - 7*/
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000);
+/*     For IE 8*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
+}
+
+div#fill {
+    min-height: 100%;
+    min-width: 1000px;
+    /*    width: 100%;*/
+    height: auto;
+    position: fixed;
+    /*    top: 0;
+        left: 0;*/
+    background: black;
+    opacity: .6;
+}
+.colmask {
+    position:relative;	/* This fixes the IE7 overflow hidden bug */
+    clear:both;
+    float:left;
+    width:100%;			/* width of whole page */
+    overflow:hidden;		/* This chops off any overhanging divs */
+}
+
+/* common column settings */
+.colright,
+.colmid,
+.colleft {
+    float:left;
+    width:100%;
+    position:relative;
+}
+.col1,
+.col2,
+.col3 {
+    float:left;
+    position:relative;
+    padding:0 0 1em 0;
+    overflow:hidden;
+}
+/* 2 Column (right menu) settings */
+.rightmenu {
+    /*background:#eee;		 right column background colour */
+}
+.rightmenu .colleft {
+    right:25%;			/* right column width */
+    /*background:#fff;		 left column background colour */
+}
+.rightmenu .col1 {
+    width:78%;			/* left column content width (left column width minus left and right padding) */
+    left:25%;			/* (right column width) plus (left column left padding) */
+}
+.rightmenu .col2 {
+    width:18%;			/* right column content width (right column width minus left and right padding) */
+    left:27%;			/* (right column width) plus (left column left and right padding) plus (right column left padding) */
+}
+
+/* 3 Column settings */
+.threecol {
+    background:#eee;		/* right column background colour */
+}
+.threecol .colmid {
+    right:25%;			/* width of the right column */
+    background:#fff;		/* center column background colour */
+}
+.threecol .colleft {
+    right:50%;			/* width of the middle column */
+    background:#f4f4f4;	/* left column background colour */
+}
+.threecol .col1 {
+    width:46%;			/* width of center column content (column width minus padding on either side) */
+    left:102%;			/* 100% plus left padding of center column */
+}
+.threecol .col2 {
+    width:21%;			/* Width of left column content (column width minus padding on either side) */
+    left:31%;			/* width of (right column) plus (center column left and right padding) plus (left column left padding) */
+}
+.threecol .col3 {
+    width:21%;			/* Width of right column content (column width minus padding on either side) */
+    left:85%;			/* Please make note of the brackets here:
+                                    (100% - left column width) plus (center column left and right padding) plus (left column left and right padding) plus (right column left padding) */
+}
+
+
+#container{
+    width:1000px;
+    max-width:1000px;
+    min-width:975px;
+    padding-bottom:10px;
+    margin-bottom:40px;
+    position:relative;
+    top: 129px;
+    /*    margin-top:20px;*/
+}
+
+header{
+    z-index:100;
+    width:100%;
+    height:95px;
+    background-image:url('/public/images/HeaderBackground.png');
+    position:fixed;
+}
+
+#HeaderBackground{
+    /*    position: absolute;*/
+    border-left:none;
+    border-top:none;
+    border-right:none;
+    height:95px;
+    width:100%;
+    background-image:url('/public/images/HeaderBackground.png');
+}
+#banner{
+    /*    background-image:url('../images/header/banner.png');
+        background-repeat:no-repeat;*/
+    position: absolute;
+    top:0px;
+    height:95px;
+    width:100%;
+    display:table-cell;
+}
+#banner img{
+    display:block;
+}
+#banner iframe{
+    position:relative;
+    float:right;
+}
+
+#main-content{
+    /*z-index: 1;*/
+    max-width:1000px;
+    padding:10px;
+    padding-top:20px;
+    min-height: 600px;
+}
+.center{
+    margin:0 auto;
+}
+.dead-center{
+    margin:auto auto;
+}
+.hide{
+    display:none;
+}
+.error{
+    background: #f8dbdb;
+    border-color: #e77776;
+}
+input, select{
+    padding: 6px;
+    color:black;
+    font-family: Arial,  Verdana, Helvetica, sans-serif;
+    font-size: 11px;
+    border: 1px solid #cecece;
+}
+
+.data-table{
+    background-color:white;
+    border:2px solid white;
+    border-collapse: collapse;
+    color:black;
+    width:100%;
+    text-align: left;
+    font-size:13px;
+}
+
+.ui-widget-content {
+    padding:5px;
+}
+.data-table thead{
+    border-bottom:1px solid black;
+}
+
+.data-table a{
+    color:rgb(11, 117, 175);
+    text-decoration: none;
+}
+
+.data-table tr:hover{
+    background-color:rgb(212, 209, 191);
+}
+
+.image-link{
+    text-decoration: none;
+}
+
+.image-link img{
+    text-decoration: none;
+    border:none;
+}
+
+.social-img-link{
+    float:left; 
+    margin-left:15px
+}
+
+footer{
+    z-index: 250;
+    position: fixed ;
+    bottom:-1px;
+    left:0px;
+    width:100%;
+    height:30px;
+    margin:0 auto;
+    padding:0px;
+}
+
+#loading-screen .ui-widget-overlay
+{
+    position: fixed;
+}
+
+.ui-form-header-icon
+{
+    float: left; 
+    margin-right: .3em;
+}
+
+.width25
+{
+    width:25%;
+}
+
+.width50
+{
+    width:50%;
+}
+
+.ui-form-header
+{
+    height:40px;
+    padding:.3em .7em 0 .7em;
+}
+.ui-form-title
+{
+    float:left; 
+    margin-top: 10px; 
+    margin-right: 50px;
+}
+.ui-form-submit
+{
+    float:right;
+}
+.ui-form-content
+{
+    padding:.3em .7em;
+    min-height: 550px;
+    padding-bottom: 70px;
+}
+
+nav{
+    height:32px;
+    line-height:32px;
+    background:#3B5998;
+    padding:0 10px;
+    position: relative;
+    top:95px;
+}
+
+nav ul{
+    width:1000px;
+}
+
+nav ul,
+nav ul li {
+    margin:0;   
+    padding:0;
+    list-style:none;
+}
+nav ul li{
+    float:left;
+    display:block;
+}
+
+nav ul li a:link,
+nav ul li a:visited{
+    color:#FFF;
+    font-size:14px;
+    font-weight:bold;
+    text-decoration:none;
+    padding:0 20px 0 6px;
+    display:block;
+}
+nav ul li a:hover{
+    color:#EBEFF7;
+}
+
+nav ul li ul li{
+    float:none;
+    display:block;
+}
+nav ul li ul li a:link,
+nav ul li ul li a:visited{
+    color:#444;
+    font-size:1em;
+    font-weight:bold;
+    text-decoration:none;
+    padding:0 10px;
+    clear:both;
+    border-bottom:solid 1px #DEDEDE;
+}
+
+nav ul li ul li a:hover{
+    color:#3B5998;
+    background:#EBEFF7;
+}
+
+.submenu {
+    position: absolute;
+    width: 160px;
+    /*    background: #FFF;*/
+    padding: 10px;
+    /*    border: solid 1px #2E4B88;*/
+    border-top: none;
+    display: none;
+    line-height: 26px;
+    z-index: 1000;
+}

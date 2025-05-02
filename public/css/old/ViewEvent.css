@@ -1,0 +1,32 @@
+#showTitle
+{
+    text-align: center;
+    font-size: xx-large;
+    text-shadow: #333333;
+    font-family: cursive;
+    margin:5px;
+}
+
+#pNotes
+{
+    white-space: pre-wrap;
+    background-color: white;
+    padding: 10px;
+    font-size:13px;
+    margin:5px;
+}
+
+#widgetContent
+{
+    padding:.7em; 
+   /* background: url("/public/images/faddedpaper.png") repeat;
+    color:black;*/
+}
+
+fieldset
+{
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    font-size:13px;
+    border:none;
+}

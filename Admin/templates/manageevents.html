@@ -1,0 +1,89 @@
+{extends file="templates/securemaster.tpl"}
+
+{block name=scripts append}
+
+
+<script src="../../Scripts/jquery-ui-timepicker-addon.js"></script>
+<script src="../../Scripts/tinymce/tinymce.js"></script>
+{/block}
+{block name=css append}
+<link href="../../Content/jquery-ui-timepicker-addon.css" rel="stylesheet" />
+
+{/block}
+{block name=body prepend}
+
+    {/block}
+{block name=content}
+
+{include file="templates/eventwizard.html"}
+
+<div id="loading" style="display:none;">
+    <!-- ui-dialog -->
+    <div class="ui-overlay">
+        <div class="ui-widget-overlay"></div>
+        <div class="ui-widget-shadow ui-corner-all"
+             style="width: 122px; height: 122px; position: absolute; left: 35%; top: 35%;"></div>
+    </div>
+    <div style="position: absolute; width: 100px; height: 100px;left: 35%; top: 35%; padding: 10px;"
+         class="ui-widget ui-widget-content ui-corner-all">
+        <img src="/public/images/ajax-loader.gif" alt="loading" />
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-10">
+        <span class="h2">Manage Events</span>
+    </div>
+    <div class="col-xs-2">
+        <button id="btnCreateEvent" class="btn btn-primary" data-toggle="modal" data-bind="click:newEvent">
+            New Event
+        </button>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="table-responsive">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th style="width: 33%;">Title</th>
+                        <th style="width:33%;">Company</th>
+                        <th style="width:34%;">Url Slug</th>
+                        <!--<th style="width:16px;"></th>-->
+                        <th style="width:16px;"></th>
+                        <th style="width:16px;"></th>
+                    </tr>
+                </thead>
+                <tbody id="tblEvents" data-bind="foreach:eventListing">
+                    <tr>
+                        <td>
+                            <input title='make part of the current season' type='checkbox'
+                                   class='activeEvent' data-bind="checked:$data.Active == '1'" />
+                        </td>
+                        <td>
+                            <a title='Preview Event' data-bind="html: $data.Title" />
+                        </td>
+                        <td>
+                            <span data-bind="text: $data.Company" />
+                        </td>
+                        <td>
+                            <span data-bind="text: $data.Slug" />
+                        </td>
+                        <td>
+                            <span class='fa fa-pencil-square-o fa-lg' data-bind="click: function(){ $parent.edit($data.ID)}"></span>
+                        </td>
+                        <td>
+                            <span class='fa fa-trash-o fa-lg' data-bind="click: function(){ $parent.delete($data)}"></span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="/public/javascript/admin/NewEventViewModel.js"></script>
+<script src="/public/javascript/admin/ManageEventTableItem.js"></script>
+<script type="text/javascript" src="/public/javascript/admin/manageEvent.js"></script>
+
+                    {/block}

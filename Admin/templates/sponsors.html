@@ -1,0 +1,99 @@
+{extends file="templates/securemaster.tpl"}
+
+{block name=scripts append}
+<script src="http://malsup.github.com/jquery.form.js"></script>
+<script src="/public/javascript/jquery.validate.js"></script>
+<script type="text/javascript" src="/public/javascript/admin/sponsors.js"></script>
+{/block}
+{block name=body prepend}
+<div id="masthead">
+    <span class="head">Sponsors</span>
+    <button id="btnAddSponsor" class="ui-form-submit">Create</button>
+    <!--  <button id="btnCreateEvent" style="float:right; margin:20px;">New Event</button>  -->
+</div>
+{/block}
+{block name=content}
+
+<div id="dialog">
+    <div class="ui-widget" id="errorMsg">
+        <div class="ui-state-error ui-corner-all" style="padding: 0 .7em;display:none;">
+            <p>
+                <span class="ui-icon ui-icon-alert" style="float: left; margin-right: .3em;"></span>
+                <strong>Error:</strong> <span id="errorText"></span>
+            </p>
+        </div>
+    </div>
+    <form id="frmSponsors" action="Ajax/Sponsors.php" enctype="multipart/form-data" method="post">
+        <input type="hidden" id="inSponsorID" name="id" />
+        <img id="preview" alt='currently uploaded image' />
+        <div>
+            <label for="inActive"><strong>Active</strong></label>
+            <input id="inActive" name="active" type="checkbox" />
+        </div>
+        <p>
+            <span class='required' title='Required field.'>*</span>
+            <label for="inSponsorName"><strong>Sponsor</strong></label>
+            <br />
+            <input id="inSponsorName" name="name" type="text" required="required" class="input-long required" />
+        </p>
+        <p>
+            <label for="website"><strong>Website</strong></label><br />
+            <em><strong>http://</strong></em><input id="inWebsite" name="website" type="url" class="input-url" />
+        </p>
+        <p>
+            <span class='required' title='Required field.'>*</span>
+            <label for="inLogo">
+                <strong>Sponsor Logo</strong>
+            </label><br />
+            <input id="inLogo" name="image" type="file" /><br />
+        </p>
+    </form>
+    <div id="loading" style="display:none;">
+        <!-- ui-dialog -->
+        <div class="ui-overlay">
+            <div class="ui-widget-overlay"></div>
+            <div class="ui-widget-shadow ui-corner-all" style="width: 122px; height: 122px; position: absolute; left: 34%; top: 30px;"></div>
+        </div>
+        <div style="position: absolute; width: 100px; height: 100px;left: 34%; top: 30px; padding: 10px;" class="ui-widget ui-widget-content ui-corner-all">
+            <img src="/public/images/ajax-loader.gif" alt="loading" />
+        </div>
+    </div>
+</div>
+
+<!--<div class="ui-widget-header ui-form-header">
+    <div class="ui-form-title" >
+        <span class='ui-icon ui-icon-home ui-form-header-icon'></span>
+        <strong>Sponsors</strong>
+    </div>
+    <button id="btnAddSponsor" class="ui-form-submit">Create</button>
+</div>   -->
+<div class="table-responsive">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Website</th>
+                <th>Active</th>
+                <th style="width:16px;"><!--Delete--></th>
+            </tr>
+        </thead>
+        <tbody id="tblSponsors">
+            {foreach from=$sponsors item=sponsor}
+            <tr>
+                <td class="name">
+                    <a class="readSponsor" data-id="{$sponsor[" id"]}" href='#'>{$sponsor["name"]}</a>
+                </td>
+                <td class="website">{$sponsor["website"]}</td>
+                <td class="active">{$sponsor["active"]}</td>
+                <td>
+                    <a class="delete" title='Delete Sponsor' href='#' data-id="{$sponsor[" id"]}">
+                        <span class='ui-icon ui-icon-trash'></span>
+                    </a>
+                </td>
+            </tr>
+            {/foreach}
+        </tbody>
+    </table>
+</div>
+
+{/block}

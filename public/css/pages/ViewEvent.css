@@ -1,0 +1,63 @@
+#companyHeader{
+    padding:10px;
+    font-size:2em; 
+    margin:10px;
+}
+
+#showTitle
+{
+    text-align: center;
+    margin-top:24px;
+    
+   /*  font-size: xx-large;
+    text-shadow: #333333;
+    font-family: cursive;
+   margin:5px;*/
+}
+
+#pNotes
+{
+    white-space: pre-wrap;
+/*    background-color: white;*/
+    padding: 10px;
+    /*font-size:13px;*/
+    margin-bottom:10px;
+}
+
+#widgetContent
+{
+    padding:.7em; 
+   /* background: url("/public/images/faddedpaper.png") repeat;
+    color:black;*/
+}
+
+fieldset
+{
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    font-size:13px;
+    border:none;
+}
+
+.infoBox{
+    margin-bottom:10px;
+}
+
+.infoBox-content{
+    background:white;
+    padding-top:5px;
+    padding-left:10px;
+    padding-right:10px;
+    padding-bottom:10px;
+}
+
+.ui-widget-content h3{ 
+    margin:0px;
+    padding:0px;
+    padding-left:20px;
+
+}
+
+.ui-tabs .ui-tabs-panel{
+    padding:0px;
+}

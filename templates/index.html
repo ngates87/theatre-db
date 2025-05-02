@@ -1,0 +1,88 @@
+{extends file="master.html"}
+
+{block name=css append}
+
+{/block}
+
+{block name=scripts append}
+
+<!-- <script src="/public/javascript/pages/index.js"></script>-->
+{/block}
+
+{block name=body}
+<!-- slider -->
+
+<div class="row">
+    <div class="col-lg-offset-2 col-lg-8">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                {assign var="sliderCnt" value=$sliderItems|@count}
+                {for $i=0 to ($sliderCnt-1)}
+                <li data-target="#myCarousel" data-slide-to="{$i}" class="{if $i==0}active{/if}">
+                    {/for}
+            </ol>
+            <div class="carousel-inner" role="listbox">
+                {for $i=0 to ($sliderCnt-1)}
+                <div class="item {if $i==0}active{/if}">
+                    <img src='Includes/Objects/ImageHandler.php?ImageID={$sliderItems[$i]["imageID"]}' alt="alt text" />
+                </div>
+                {/for}
+            </div>
+        </div>
+        <div class="shadow-slider"></div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-12">
+        <!-- ENDS slider -->
+        <!-- Headline -->
+        <h2>
+            Come join us for some play!
+        </h2>
+        <!-- ENDS Headline -->
+
+        <section id="about" style="width:99%; padding:5px;">
+            <h1 class="home-block-heading">About Us</h1>
+            <p>
+                Marshall Area Stage Co. is a community theatre organization formed in
+                1999. In cooperation with Marshall Community Services, and with the assistance
+                of Marshall Area Fine Arts Council, (MAFAC), we hope to continue providing
+                annual productions and theatre workshops while supporting other art functions
+                in our community. We are proud to enhance the cultural environment this
+                area offers.
+            </p>
+            <p>
+                <strong>OUR MISSION</strong> - To encourage the growth of the performing
+                arts in Marshall &amp; surrounding communities.
+            </p>
+            <p>
+                <strong>OUR GOAL</strong> - To enrich, entertain and educate Southwest
+                Minnesota!
+            </p>
+        </section>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <!-- home-gallery -->
+        <h1 class="home-block-heading">Sponsors</h1>
+    </div>
+</div>
+
+	{assign var="max" value=4}
+    {assign var="sponsorCnt" value=$sponsors|@count}
+    {for $i=0 to ($sponsorCnt-1)}
+		{if ($i % $max) == 0}
+            <div class="row">
+        {/if}
+            <div class='col-sm-{12/$max}'>
+                <a href='http://{$sponsors[$i]->Website}' target="_blank">
+                    <img src='Includes/Objects/ImageHandler.php?ImageID={$sponsors[$i]->Image_ID}' alt="{$sponsors[$i]->Name}" class="img-responsive" />
+                </a>
+            </div><!---End cell $i == {$i}-->
+        {if ((($i % $max) +1) == $max) || $i==($sponsorCnt-1)}
+            </div><!---End Row $i == {$i}-->
+		{/if}
+    {/for}
+{/block}

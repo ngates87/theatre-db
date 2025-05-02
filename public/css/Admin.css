@@ -1,0 +1,101 @@
+table{
+    width:100%;
+    text-align: left;
+}
+
+.action{
+    text-align: right;
+    width:16px;
+}
+.action a{
+    text-decoration: none;
+}
+div#admin-links
+{
+    background-color: white;
+    padding:.3em .5em;
+    margin-bottom:5px;
+}
+div#admin-links ul{
+    list-style: none;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin: 0px;
+}
+li{
+    padding-top: 3px;
+    padding-bottom: 3px;
+    display:inline-block;
+    margin-left:5px;
+}
+
+.input-section{
+    display:inline-block;
+    margin-right:10px;
+}
+
+.ui-state-highlight{
+    padding:.7em;
+}
+
+#admin-links{
+    padding:0px;
+}
+#admin-links li{
+    list-style: none;
+}
+#admin-links li a{
+    text-decoration: none;
+}
+
+.required{
+    color:red;
+    cursor:pointer;
+}
+
+.input-long{
+    width:275px;
+}
+
+.input-url{
+    width:300px;
+}
+
+.col1{
+    width:78%;
+    /*    float:left;*/
+    margin-right:3%;
+}
+
+.col2{
+    width:18%;
+    display:inline-block;
+    top: 1%;
+    right: 1%;
+    position: absolute;
+}
+
+
+/*
+    Cleaning up admin pages 10/26/2012
+*/
+.ui-form-header{
+    margin-bottom:10px;
+}
+.ui-form-title{
+    height:38px;
+    padding:5px 25px 5px 5px;
+}
+
+.ui-form-title h3{
+    display: inline;
+}
+.ui-form-submit{
+    margin:20px 20px 20px 0px;
+    float:right;
+}
+
+.ui-form-content{
+    padding:.3em .7em;
+    padding-bottom: 70px;
+}

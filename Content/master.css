@@ -1,0 +1,18 @@
+﻿.page-host {
+    margin-top:65px;
+    background-color:white;
+    padding:10px;
+
+}
+.row{
+  margin-top: 15px;
+  margin-bottom: 15px
+}
+
+body {
+    background: #ececec url(../public/images/img/main-pattern.png);
+    color: #888;
+}
+.container-fluid{
+    max-width:1300px;
+}
